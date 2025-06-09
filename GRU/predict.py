@@ -76,6 +76,7 @@ def plot_pred(y, y_pred, model_name):
     plt.grid()
     #plt.show()
     plt.savefig(save_path + '/Pred_' + model_name + '.png')
+    plt.show()
 
 def plot_residuals(y, y_pred, model_name):
     
@@ -130,6 +131,7 @@ def plot_residuals(y, y_pred, model_name):
     plt.text(0.0, 0.05, info_show, ha='left', va='center', transform=ax.transAxes)
     
     plt.savefig(save_path + '/Res_' + model_name + '.png')
+    plt.show()
 
 def my_self(y, y_pred, model_name):
     plt.title(model_name + ' Model')
@@ -137,3 +139,4 @@ def my_self(y, y_pred, model_name):
     plt.plot(y_pred,label='Prediction')
     plt.legend()
     plt.savefig(save_path + '/my_' + model_name + '.png')
+    plt.show()

@@ -40,8 +40,8 @@ def plot_pred(y, y_pred, model_name):
     residuals = y_pred - y
     res_abs = np.abs(residuals)
     
-    th_1 = 15   #Define this value in your case
-    th_2 = 35   #Define this value in your case
+    th_1 = 30   #Define this value in your case
+    th_2 = 60   #Define this value in your case
     r1_idx = np.where(res_abs <= th_1)
     r2_idx = np.where((res_abs > th_1) & (res_abs <= th_2))
     r3_idx = np.where(res_abs > th_2)
@@ -76,6 +76,7 @@ def plot_pred(y, y_pred, model_name):
     plt.grid()
     #plt.show()
     plt.savefig(save_path + '/Pred_' + model_name + '.png')
+    plt.show()
 
 def plot_residuals(y, y_pred, model_name):
     
@@ -83,8 +84,8 @@ def plot_residuals(y, y_pred, model_name):
     res_abs = np.abs(residuals)
 #    print(residuals)
     
-    th_1 = 15   #Define this value in your case
-    th_2 = 35   #Define this value in your case
+    th_1 = 30   #Define this value in your case
+    th_2 = 60   #Define this value in your case
     r1_idx = np.where(res_abs <= th_1)
     r2_idx = np.where((res_abs > th_1) & (res_abs <= th_2))
     r3_idx = np.where(res_abs > th_2)
@@ -130,11 +131,12 @@ def plot_residuals(y, y_pred, model_name):
     plt.text(0.0, 0.05, info_show, ha='left', va='center', transform=ax.transAxes)
     
     plt.savefig(save_path + '/Res_' + model_name + '.png')
+    plt.show()
 
 def my_self(y, y_pred, model_name):
     plt.title(model_name + ' Model')
     plt.plot(y,label='Ground Truth')
     plt.plot(y_pred,label='Prediction')
     plt.legend()
-    plt.show()
     plt.savefig(save_path + '/my_' + model_name + '.png')
+    plt.show()
