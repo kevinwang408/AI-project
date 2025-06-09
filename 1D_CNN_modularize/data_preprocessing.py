@@ -10,7 +10,7 @@ def load_and_preprocess(filepath, nrows=None):
     dataset = dataset.drop(["Data", "Time"], axis=1)
     
     target_column = "Radiation"
-    scalar_dim = dataset["Temperature"].values.reshape(-1, 1)
+    scalar_dim = dataset[target_column].values.reshape(-1, 1)
 
     scaler_all = MinMaxScaler(feature_range=(0, 1))
     scaler_dim = MinMaxScaler(feature_range=(0, 1))
