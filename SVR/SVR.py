@@ -10,7 +10,7 @@ from sklearn.metrics import mean_absolute_error
 import matplotlib.pyplot as plt
 import predict
 
-dataset=pd.read_csv('SolarPrediction_aligned_Sun.csv',engine='python',nrows=576*15)
+dataset=pd.read_csv('SolarRadiationPrediction.csv',engine='python',nrows=576*15)
 dataset.head()
 
 #factor=dataset.drop("Radiation",axis=1)

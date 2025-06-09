@@ -7,7 +7,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
 
 # 讀取CSV檔案
-file_path = "SolarPrediction_time_aligned.csv"
+file_path = "SolarRadiationPrediction.csv"
 data = pd.read_csv(file_path)
 
 # 假設目標變數是 'target_variable'，請替換成實際的目標變數名稱

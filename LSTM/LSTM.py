@@ -12,7 +12,7 @@ from sklearn.metrics import mean_absolute_error
 import predict
 
 
-dataset=pd.read_csv('SolarPrediction_aligned_Sun.csv',engine='python',nrows=576*15)
+dataset=pd.read_csv('SolarRadiationPrediction.csv',engine='python',nrows=576*15)
 dataset=dataset.drop("Data",axis=1)
 dataset=dataset.drop("Time",axis=1)
 # dataset=dataset.drop("TimeSunRise",axis=1)

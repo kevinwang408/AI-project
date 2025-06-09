@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 import predict
 
-dataset=pd.read_csv('SolarPrediction_aligned_Sun.csv',engine='python',nrows=576*15)
+dataset=pd.read_csv('SolarRadiationPrediction.csv',engine='python',nrows=576*15)
 dataset=dataset.drop("Data",axis=1)
 dataset=dataset.drop("Time",axis=1)
 target=dataset["Radiation"]

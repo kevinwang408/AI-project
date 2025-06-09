@@ -11,7 +11,7 @@ from tcn import TCN, tcn_full_summary
 from optuna.samplers import TPESampler,CmaEsSampler
 import optuna
 batch_size, time_steps, input_dim = 20, 5, 9
-dataset=pd.read_csv('SolarPrediction_aligned_Sun.csv',engine='python',nrows=576*15)
+dataset=pd.read_csv('SolarRadiationPrediction.csv',engine='python',nrows=576*15)
 dataset=dataset.drop("Data",axis=1)
 dataset=dataset.drop("Time",axis=1)
 dataset.head(5)

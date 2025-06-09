@@ -6,7 +6,7 @@ from sklearn.metrics import mean_squared_error
 import matplotlib.pyplot as plt
 
 # 讀取CSV檔案
-file_path = "SolarPrediction_time_aligned.csv"
+file_path = "SolarRadiationPrediction.csv"
 data = pd.read_csv(file_path)
 
 # 假設目標變數是 'target_variable'，請替換成實際的目標變數名稱

@@ -94,7 +94,7 @@ def train_and_evaluate(trainX, trainY, testX, testY, scalers):
 
 # Main pipeline
 if __name__ == "__main__":
-    data_path = 'SolarPrediction_aligned_Sun.csv'
+    data_path = 'SolarRadiationPrediction.csv'
     look_back = 5
     dataset = load_and_preprocess_data(data_path)
     trainX, trainY, testX, testY, scalers = split_and_scale_data(dataset, look_back)

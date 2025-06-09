@@ -13,7 +13,7 @@ from tensorflow.keras.layers import Dense
 from tensorflow.keras.layers import Dense,Dropout
 #from tensorflow.keras.optimizers import RMSprop
 
-dataset=pd.read_csv('SolarPrediction_aligned_Sun.csv',engine='python',nrows=576*15)
+dataset=pd.read_csv('SolarRadiationPrediction.csv',engine='python',nrows=576*15)
 dataset=dataset.drop("Data",axis=1)
 dataset=dataset.drop("Time",axis=1)
 # dataset=dataset.drop("TimeSunRise",axis=1)

@@ -9,7 +9,7 @@ INPUT_DIM = 9
 TARGET_INDEX = 1
 
 # data preprocessing
-dataset_scaled, scalar_dim_scaled, scaler_dim, scaler_all = load_and_preprocess('SolarPrediction_aligned_Sun.csv', nrows=576*15)
+dataset_scaled, scalar_dim_scaled, scaler_dim, scaler_all = load_and_preprocess('SolarRadiationPrediction.csv', nrows=576*15)
 
 # divide data into time seqences
 train, test = split_dataset(dataset_scaled)
