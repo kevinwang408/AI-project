@@ -1,6 +1,6 @@
 from data_preprocessing import load_and_preprocess
 from dataset_creator import split_dataset, create_dataset
-from model_1dcnn import build_1dcnn
+import model_1dcnn 
 from utils import inverse_transform_and_evaluate
 import predict  
 
@@ -16,14 +16,8 @@ train, test = split_dataset(dataset_scaled)
 trainX, trainY = create_dataset(train, look_back=LOOK_BACK, input_dim=INPUT_DIM, target_index=TARGET_INDEX)
 testX, testY = create_dataset(test, look_back=LOOK_BACK, input_dim=INPUT_DIM, target_index=TARGET_INDEX)
 
-# build and train the model
-model = build_1dcnn(input_shape=(LOOK_BACK, INPUT_DIM))
-model.fit(trainX, trainY, epochs=5, batch_size=21, validation_data=(testX, testY))
-
 # prediction and evaluation
-trainPred = model.predict(trainX)
-testPred = model.predict(testX)
-
+trainPred, testPred= model_1dcnn.build_predict(LOOK_BACK,INPUT_DIM,trainX,trainY,testX,testY)
 trainY_inv, trainPred_inv, _, _ = inverse_transform_and_evaluate(scaler_dim, trainY, trainPred)
 testY_inv, testPred_inv, rmse, mae = inverse_transform_and_evaluate(scaler_dim, testY, testPred)
 

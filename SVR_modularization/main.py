@@ -16,14 +16,11 @@ train, test = split_dataset(dataset_scaled)
 trainX, trainY = create_dataset(train, look_back=LOOK_BACK, input_dim=INPUT_DIM, target_index=TARGET_INDEX)
 testX, testY = create_dataset(test, look_back=LOOK_BACK, input_dim=INPUT_DIM, target_index=TARGET_INDEX)
 
-#flatten
 trainX = trainX.reshape(trainX.shape[0], -1)
 testX = testX.reshape(testX.shape[0], -1)
-
 # build and train the model
 model = build_SVR()
 model.fit(trainX, trainY)
-
 # prediction and evaluation
 trainPred = model.predict(trainX).reshape(-1, 1)
 testPred = model.predict(testX).reshape(-1, 1)
