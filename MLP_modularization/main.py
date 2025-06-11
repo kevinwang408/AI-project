@@ -1,6 +1,6 @@
 from data_preprocessing import load_and_preprocess
 from dataset_creator import split_dataset, create_dataset
-from model_SVR import build_SVR
+from model_MLP import build_MLP
 from utils import inverse_transform_and_evaluate
 import predict  
 
@@ -21,18 +21,18 @@ trainX = trainX.reshape(trainX.shape[0], -1)
 testX = testX.reshape(testX.shape[0], -1)
 
 # build and train the model
-model = build_SVR()
+model = build_MLP()
 model.fit(trainX, trainY)
 
 # prediction and evaluation
 trainPred = model.predict(trainX).reshape(-1, 1)
 testPred = model.predict(testX).reshape(-1, 1)
 
-trainY_inv, trainPred_inv, _, _ = inverse_transform_and_evaluate(scaler_dim, trainY, trainPred)
+#trainY_inv, trainPred_inv, _, _ = inverse_transform_and_evaluate(scaler_dim, trainY, trainPred)
 testY_inv, testPred_inv, rmse, mae = inverse_transform_and_evaluate(scaler_dim, testY, testPred)
 
 # plot
-predict.my_self(testY_inv, testPred_inv, 'SVR')
+predict.my_self(testY_inv, testPred_inv, 'MLP')
 predict.score_calculation(testY_inv, testPred_inv)
-predict.plot_pred(testY_inv, testPred_inv, 'SVR')
-predict.plot_residuals(testY_inv, testPred_inv, 'SVR')
+predict.plot_pred(testY_inv, testPred_inv, 'MLP')
+predict.plot_residuals(testY_inv, testPred_inv, 'MLP')
