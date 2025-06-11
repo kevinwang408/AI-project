@@ -63,7 +63,7 @@ def train_and_evaluate(trainX, trainY, testX, testY, scalers):
         max_depth=5,
         min_samples_split=18,
         min_samples_leaf=20,
-        max_features='auto'  # For regression, this means sqrt(n_features)
+        max_features='sqrt'  # For regression, this means sqrt(n_features)
     )
     model.fit(trainX, trainY)
 

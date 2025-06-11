@@ -1,6 +1,6 @@
 from data_preprocessing import load_and_preprocess
 from dataset_creator import split_dataset, create_dataset
-from model_LSTM import build_LSTM
+from model_SVR import build_SVR
 from utils import inverse_transform_and_evaluate
 import predict  
 
@@ -16,19 +16,23 @@ train, test = split_dataset(dataset_scaled)
 trainX, trainY = create_dataset(train, look_back=LOOK_BACK, input_dim=INPUT_DIM, target_index=TARGET_INDEX)
 testX, testY = create_dataset(test, look_back=LOOK_BACK, input_dim=INPUT_DIM, target_index=TARGET_INDEX)
 
+#flatten
+trainX = trainX.reshape(trainX.shape[0], -1)
+testX = testX.reshape(testX.shape[0], -1)
+
 # build and train the model
-model = build_LSTM(input_shape=(LOOK_BACK, INPUT_DIM))
-model.fit(trainX, trainY, epochs=5, batch_size=21, validation_data=(testX, testY))
+model = build_SVR()
+model.fit(trainX, trainY)
 
 # prediction and evaluation
-trainPred = model.predict(trainX)
-testPred = model.predict(testX)
+trainPred = model.predict(trainX).reshape(-1, 1)
+testPred = model.predict(testX).reshape(-1, 1)
 
-#trainY_inv, trainPred_inv, _, _ = inverse_transform_and_evaluate(scaler_dim, trainY, trainPred)
+trainY_inv, trainPred_inv, _, _ = inverse_transform_and_evaluate(scaler_dim, trainY, trainPred)
 testY_inv, testPred_inv, rmse, mae = inverse_transform_and_evaluate(scaler_dim, testY, testPred)
 
 # plot
-predict.my_self(testY_inv, testPred_inv, 'LSTM')
+predict.my_self(testY_inv, testPred_inv, 'SVR')
 predict.score_calculation(testY_inv, testPred_inv)
-predict.plot_pred(testY_inv, testPred_inv, 'LSTM')
-predict.plot_residuals(testY_inv, testPred_inv, 'LSTM')
+predict.plot_pred(testY_inv, testPred_inv, 'SVR')
+predict.plot_residuals(testY_inv, testPred_inv, 'SVR')

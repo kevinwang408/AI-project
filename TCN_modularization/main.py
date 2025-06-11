@@ -24,7 +24,7 @@ model.fit(trainX, trainY, epochs=3, batch_size=21, validation_data=(testX, testY
 trainPred = model.predict(trainX)
 testPred = model.predict(testX)
 
-trainY_inv, trainPred_inv, _, _ = inverse_transform_and_evaluate(scaler_dim, trainY, trainPred)
+#trainY_inv, trainPred_inv, _, _ = inverse_transform_and_evaluate(scaler_dim, trainY, trainPred)
 testY_inv, testPred_inv, rmse, mae = inverse_transform_and_evaluate(scaler_dim, testY, testPred)
 
 # plot
