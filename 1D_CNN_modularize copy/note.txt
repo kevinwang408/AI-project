@@ -1,2 +1,0 @@
-this folder use chatgpt to modularize 1D CNN code
-try to prove the codes are right
