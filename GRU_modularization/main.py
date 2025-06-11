@@ -1,6 +1,6 @@
 from data_preprocessing import load_and_preprocess
 from dataset_creator import split_dataset, create_dataset
-from model_1dcnn import build_1dcnn
+from model_GRU import build_GRU
 from utils import inverse_transform_and_evaluate
 import predict  
 
@@ -17,7 +17,7 @@ trainX, trainY = create_dataset(train, look_back=LOOK_BACK, input_dim=INPUT_DIM,
 testX, testY = create_dataset(test, look_back=LOOK_BACK, input_dim=INPUT_DIM, target_index=TARGET_INDEX)
 
 # build and train the model
-model = build_1dcnn(input_shape=(LOOK_BACK, INPUT_DIM))
+model = build_GRU(input_shape=(LOOK_BACK, INPUT_DIM))
 model.fit(trainX, trainY, epochs=5, batch_size=21, validation_data=(testX, testY))
 
 # prediction and evaluation
@@ -28,7 +28,7 @@ trainY_inv, trainPred_inv, _, _ = inverse_transform_and_evaluate(scaler_dim, tra
 testY_inv, testPred_inv, rmse, mae = inverse_transform_and_evaluate(scaler_dim, testY, testPred)
 
 # plot
-predict.my_self(testY_inv, testPred_inv, 'LSTM')
+predict.my_self(testY_inv, testPred_inv, 'GRU')
 predict.score_calculation(testY_inv, testPred_inv)
-predict.plot_pred(testY_inv, testPred_inv, 'LSTM')
-predict.plot_residuals(testY_inv, testPred_inv, 'LSTM')
+predict.plot_pred(testY_inv, testPred_inv, 'GRU')
+predict.plot_residuals(testY_inv, testPred_inv, 'GRU')
