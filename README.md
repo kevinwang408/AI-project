@@ -53,20 +53,38 @@ The dataset consists of time series records of solar radiation intensity measure
 
 ## Usage
 
-To train and evaluate models, use the provided scripts:
+All models are organized in a modular fashion under the `model modularization` directory. Each subfolder within this directory corresponds to a specific model:
 
-```bash
-python train.py --model [MODEL_NAME] --data [DATA_PATH] --epochs [N]
+```
+model modularization/
+  ├── 1D_CNN/
+  ├── GRU/
+  ├── LSTM/
+  ├── MLP/
+  ├── Transformer/
+  ├── Regression_Tree/
+  ├── Random_Forest_Regression/
+  ├── SVR/
+  └── TCN/
 ```
 
-**Supported model names:** `cnn1d`, `gru`, `lstm`, `mlp`, `transformer`, `regtree`, `rf`, `svr`, `tcn`
+Each model folder contains a `main.py` file. To use or train a specific model, navigate to the corresponding folder and execute `main.py`:
 
-**Example:**
 ```bash
-python train.py --model lstm --data data/hawaii_solar.csv --epochs 50
+cd "model modularization/ModelName"
+python main.py
 ```
+Replace `ModelName` with the name of the model you wish to run (e.g., `LSTM`, `GRU`, etc.).
 
-*(Add more usage examples, inference scripts, or Jupyter notebook instructions as needed.)*
+**Important Notes:**
+- **Parameter Modification:**  
+  If you wish to adjust the model’s parameters (such as learning rate, number of epochs, etc.), you will need to directly modify the relevant code inside `main.py` or other source files within the specific model folder.
+- **Data Requirements:**  
+  Make sure your data is correctly formatted and placed as expected by each model’s code.
+- **Environment:**  
+  Ensure that all required dependencies (see [Installation](#installation)) are installed and your Python environment is properly set up.
+
+Feel free to explore and modify the models as needed for your experiments!
 
 ## Results
 
