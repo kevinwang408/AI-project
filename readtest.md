@@ -36,9 +36,6 @@ AI-project/
 ├── requirements.txt
 └── README.md
 
-yaml
-複製
-編輯
 
 ---
 
@@ -48,27 +45,22 @@ yaml
    ```bash
    git clone https://github.com/kevinwang408/AI-project.git
    cd AI-project
-建議使用虛擬環境並安裝依賴：
 
-bash
-複製
-編輯
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+2. 建議使用虛擬環境並安裝依賴：
+    python3 -m venv venv
+    source venv/bin/activate
+    pip install -r requirements.txt
+
 ⚙️ 使用方式
 單模型訓練與測試：
 
 bash
-複製
-編輯
-python main.py --model transformer --epochs 50 --batch_size 32
+    python main.py --model transformer --epochs 50 --batch_size 32
 批量比較多個模型：
 
 bash
-複製
-編輯
-python main.py --compare all --epochs 30
+    python main.py --compare all --epochs 30
+
 常用參數列表
 參數	說明	範例
 --model	選擇模型名稱（cnn / gru / lstm / tcn / transformer / mlp / svr / tree / forest）	--model lstm
@@ -99,7 +91,7 @@ GRU	14.5	10.7	0.90	55 s
 Transformer	13.1	9.8	0.92	80 s
 Random Forest	16.5	12.1	0.85	20 s
 
-Transformer 模型在整體預測上表現最佳，RMSE 和 MAE 均最低，R² 最高。
+Transformer 模型在整體預測上表現最佳，RMSE 和 MAE 均最低，R² 最高
 
 🧩 如何加入新模型
 在 models/ 資料夾中新增 .py 模組，實現 train()、predict()、evaluate()。
@@ -146,3 +138,4 @@ Email：talktalkai.kevin@gmail.com
 擴大預測 horizon 為多步預測
 
 嘗試 ensemble 模型提升性能
+
