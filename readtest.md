@@ -47,18 +47,17 @@ AI-project/
    cd AI-project
 
 2. 建議使用虛擬環境並安裝依賴：
+    ```bash
     python3 -m venv venv
     source venv/bin/activate
     pip install -r requirements.txt
 
 ⚙️ 使用方式
 單模型訓練與測試：
-
-bash
+    ```bash
     python main.py --model transformer --epochs 50 --batch_size 32
 批量比較多個模型：
-
-bash
+    ```bash
     python main.py --compare all --epochs 30
 
 常用參數列表
