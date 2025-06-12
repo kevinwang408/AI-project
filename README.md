@@ -100,6 +100,7 @@ Feel free to explore and modify the models as needed for your experiments!
 | SVR         |   46.53    |    91.94   |   0.92    |
 | TCN         |   50.55    |    93.89   |    0.92   |
 
+Results show that Transformer model have the best performance on solar radiation prediction
 
 ## Contributing
 
