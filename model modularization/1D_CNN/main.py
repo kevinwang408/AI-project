@@ -5,8 +5,8 @@ from utils import inverse_transform_and_evaluate
 import predict  
 import os
 
-current_dir = os.path.dirname(__file__)  # 獲取當前 .py 檔案所在路徑
-file_path = os.path.join(current_dir, 'SolarRadiationPrediction.csv')  # 拼接成正確路徑
+current_dir = os.path.dirname(__file__)  
+file_path = os.path.join(current_dir, 'SolarRadiationPrediction.csv')  
 
 LOOK_BACK = 5
 INPUT_DIM = 9

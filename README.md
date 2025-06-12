@@ -90,17 +90,16 @@ Feel free to explore and modify the models as needed for your experiments!
 
 | Model       | MAE   | RMSE  | R²    |
 |-------------|-------|-------|-------|
-| 1D CNN      |       |       |       |
-| GRU         |       |       |       |
-| LSTM        |       |       |       |
-| MLP         |       |       |       |
-| Transformer |       |       |       |
-| Regression Tree |   |       |       |
-| Random Forest |     |       |       |
-| SVR         |       |       |       |
-| TCN         |       |       |       |
+| 1D CNN      |   54.32    |   103.79    |   0.9    |
+| GRU         |  40.68     |   90.94    |    0.93   |
+| LSTM        |   46.04    |   90.47    |   0.92    |
+| MLP         |   45.39    |   91.4    |    0.92   |
+| Transformer |    32.18   |    77.96   |    0.94   |
+| Regression Tree |  42.7 |   96.09    |   0.92    |
+| Random Forest |  54.72   |   106.24    |    0.9   |
+| SVR         |   46.53    |    91.94   |   0.92    |
+| TCN         |   50.55    |    93.89   |    0.92   |
 
-*(Fill in your experimental results here.)*
 
 ## Contributing
 
@@ -112,4 +111,4 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE) for more 
 
 ## Contact
 
-Maintained by [Kevin Wang](mailto:your.email@example.com).
+Maintained by [Kevin Wang](mailto:wang858107473@gmail.com).
