@@ -18,6 +18,13 @@ This project predicts the next time point's solar radiation intensity in Hawaii 
 
 This project explores multiple machine learning and deep learning models to forecast solar radiation intensity for the next time point using historical time series data collected in Hawaii. The primary goal is to compare model performances and identify the most accurate approach.
 
+**graphical abstract**
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/11c1bf63-84ab-454c-b35d-26ccade3115d" alt="graphical abstract" width="500"/>
+</p>
+
+
 ## Models Implemented
 
 - 1D CNN (Convolutional Neural Network)
